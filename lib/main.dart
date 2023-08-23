@@ -1,13 +1,11 @@
 import 'package:core/pages/welcome_screen.dart';
 import 'package:diplomski_rad_accounts_module/bloc/account_bloc.dart';
 import 'package:diplomski_rad_transactions_module/bloc/transaction_bloc.dart';
-import 'package:diplomski_rad_user_module/bloc/login/authentication_bloc.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
 void main() {
   runApp(MultiBlocProvider(providers: [
-    // BlocProvider(create: (context) => AuthenticationBloc()),
     BlocProvider(create: (context) => AccountsBloc()),
     BlocProvider(create: (context) => TransactionBloc())
   ], child: BudgetPlannerApp()));

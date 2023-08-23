@@ -60,29 +60,23 @@ packages:
   diplomski_rad_accounts_module:
     dependency: "direct main"
     description:
-      path: "."
-      ref: master
-      resolved-ref: eee5e74a08a82bd87b23732be0f342a58803a2c0
-      url: "https://github.com/antoniokunstek/diplomski-rad-account-module.git"
-    source: git
+      path: accounts
+      relative: true
+    source: path
     version: "0.0.1"
   diplomski_rad_transactions_module:
     dependency: "direct main"
     description:
-      path: "."
-      ref: main
-      resolved-ref: "805a154fde3a497cabe54f9e6227c83c0c40f8ce"
-      url: "https://github.com/antoniokunstek/diplomski-rad-transaction-module.git"
-    source: git
+      path: transactions
+      relative: true
+    source: path
     version: "0.0.1"
   diplomski_rad_user_module:
     dependency: "direct main"
     description:
-      path: "."
-      ref: dev
-      resolved-ref: b89b7ac88de21433320c40f083e89ba35183c89a
-      url: "https://github.com/antoniokunstek/diplomski_rad_user_module.git"
-    source: git
+      path: authentication
+      relative: true
+    source: path
     version: "0.0.1"
   fake_async:
     dependency: transitive
