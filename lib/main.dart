@@ -7,7 +7,7 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 
 void main() {
   runApp(MultiBlocProvider(providers: [
-    BlocProvider(create: (context) => AuthenticationBloc()),
+    // BlocProvider(create: (context) => AuthenticationBloc()),
     BlocProvider(create: (context) => AccountsBloc()),
     BlocProvider(create: (context) => TransactionBloc())
   ], child: BudgetPlannerApp()));

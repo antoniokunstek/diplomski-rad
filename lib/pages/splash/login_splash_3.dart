@@ -1,6 +1,9 @@
+import 'package:core/pages/forms/google_login.dart';
 import 'package:core/pages/forms/login_form.dart';
 import 'package:core/pages/forms/register_form.dart';
+import 'package:diplomski_rad_user_module/bloc/multiple/authentication_bloc.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 
 import '../../common/app_colors.dart';
 
@@ -47,7 +50,7 @@ class _LoginOrRegisterPageState extends State<LoginOrRegisterPage> {
                 const SizedBox(height: 5),
                 ElevatedButton(onPressed: () {
                   Navigator.push(context,
-                      MaterialPageRoute(builder: (context) => (const RegisterForm())));
+                      MaterialPageRoute(builder: (context) => (RegisterForm(authenticationBloc: RestAPIAuthentication(),))));
                 },
                     style: ElevatedButton.styleFrom(
                         backgroundColor: AppColors.mainAppColor,
@@ -63,14 +66,21 @@ class _LoginOrRegisterPageState extends State<LoginOrRegisterPage> {
                 const SizedBox(height: 5),
                 ElevatedButton(onPressed: () {
                   Navigator.push(context,
-                    MaterialPageRoute(builder: (context) => (const LoginForm())));
+                    MaterialPageRoute(builder: (context) => (LoginForm(authenticationBloc: RestAPIAuthentication()))));
                 },
                     style: ElevatedButton.styleFrom(
                         backgroundColor: AppColors.secondaryAppColor,
                         fixedSize: const Size(275, 50),
                         textStyle: const TextStyle(fontSize: 20)
                     ),
-                    child: Text("Login", style: TextStyle(color: AppColors.buttonText)))
+                    child: Text("Login", style: TextStyle(color: AppColors.buttonText))),
+              GestureDetector(
+                child: Text("Or Authenticate Using Google"),
+                onTap: () {
+                  Navigator.push(context,
+                      MaterialPageRoute(builder: (context) => (GoogleLoginForm(authenticationBloc: GoogleAuthenticationBloc()))));
+                },
+              )
             ],
           ),
         )

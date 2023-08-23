@@ -1,7 +1,9 @@
 import 'package:core/common/app_colors.dart';
 import 'package:core/pages/splash/login_splash_1.dart';
 import 'package:core/pages/splash/login_splash_3.dart';
+import 'package:diplomski_rad_user_module/bloc/multiple/authentication_bloc.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 
 import 'login_splash_2.dart';
 
